@@ -1,159 +1,26 @@
 <!DOCTYPE html>
-<!-- This line tells the browser "this is a modern HTML document" -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shayan's Practice Web Build</title>
-
-  <!-- Google Fonts: a technical/drafting-style mono font for that blueprint feel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* ---------- DESIGN TOKENS ---------- */
-    /* Defining colors/fonts once as variables means we can reuse them everywhere
-       and change the whole site's look by editing just these lines. */
-    :root {
-      --blueprint-blue: #0B3D67;
-      --grid-line: rgba(111, 168, 220, 0.35);
-      --paper: #F4F0E6;
-      --graphite: #2E2E2E;
-      --hazard-orange: #FF9F1C;
-      --font-display: 'Space Grotesk', sans-serif;
-      --font-body: 'JetBrains Mono', monospace;
-    }
-
-    /* Reset: browsers add their own default spacing, this removes it so
-       we start from a clean, predictable slate */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: var(--blueprint-blue);
-      color: var(--paper);
-      font-family: var(--font-body);
-      line-height: 1.6;
-    }
-
-    /* ---------- HERO SECTION ---------- */
-    .hero {
-      position: relative;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      overflow: hidden;
-      /* This is the blueprint grid: two repeating linear-gradients, one for
-         vertical lines and one for horizontal lines, tiled every 40px */
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-body);
-      color: var(--hazard-orange);
-      letter-spacing: 0.3em;
-      font-size: 0.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 7vw, 4.5rem);
-      color: var(--paper);
-      letter-spacing: -0.01em;
-    }
-
-    .hero-subtitle {
-      margin-top: 1.5rem;
-      max-width: 38ch;
-      color: var(--grid-line);
-      color: #A9C6E0;
-      font-size: 1rem;
-    }
-
-    /* ---------- TITLE BLOCK ---------- */
-    /* Real architectural blueprints have a small info box in the corner
-       with name / date / revision. This is our version of that. */
-    .title-block {
-      position: absolute;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      border: 1px solid var(--grid-line);
-      background: rgba(11, 61, 103, 0.6);
-      backdrop-filter: blur(2px);
-      padding: 0.75rem 1rem;
-      font-size: 0.75rem;
-      color: #A9C6E0;
-      text-align: left;
-      line-height: 1.4;
-    }
-
-    .title-block strong {
-      color: var(--hazard-orange);
-      display: block;
-      letter-spacing: 0.05em;
-    }
-
-    /* ---------- NOTES SECTION ---------- */
-    .notes {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-    }
-
-    .notes-heading {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.75rem;
-      color: var(--hazard-orange);
-      margin-bottom: 2rem;
-      border-bottom: 1px solid var(--grid-line);
-      padding-bottom: 0.75rem;
-    }
-
-    /* Turning off default bullet dots so we can build our own marker style */
-    .notes-list {
-      list-style: none;
-    }
-
-    .notes-list li {
-      display: flex;
-      gap: 1rem;
-      padding: 1rem 0;
-      border-bottom: 1px dashed var(--grid-line);
-      color: #A9C6E0;
-      font-size: 0.95rem;
-    }
-
-    .notes-list li:last-child {
-      border-bottom: none;
-    }
-
-    /* A little "callout number" before each note, like a drawing annotation */
-    .note-number {
-      color: var(--hazard-orange);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      font-size: 0.8rem;
-      color: #6B8CAB;
-      border-top: 1px solid var(--grid-line);
-    }
-  </style>
+  <!-- All styling now lives in this one shared file instead of being
+       repeated inside every page -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">SHAYAN'S PRACTICE BUILD</a>
+    <ul class="navbar-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="log.html">Build Log</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <section class="hero">
     <p class="hero-eyebrow">✦ UNDER CONSTRUCTION ✦</p>
@@ -162,24 +29,24 @@
 
     <div class="title-block">
       <strong>DRAWING NO. 001</strong>
-      SHEET: HERO<br>
+      SHEET: HOME<br>
       STATUS: IN PROGRESS<br>
-      REV: 2
+      REV: 3
     </div>
   </section>
 
   <section class="notes">
     <h2 class="notes-heading">BUILD NOTES</h2>
     <ul class="notes-list">
-      <li><span class="note-number">01</span> This whole page is one HTML file — content and styling live together, no separate tools needed.</li>
-      <li><span class="note-number">02</span> The grid background you're looking at is pure CSS — no image was used.</li>
-      <li><span class="note-number">03</span> Every color and font is a variable at the top of the file, so the whole look can change from one place.</li>
-      <li><span class="note-number">04</span> Nothing here needs a server or database — it's a static site, which is the simplest kind to host.</li>
+      <li><span class="note-number">01</span> This site now has multiple pages, all sharing one stylesheet (style.css) instead of repeating CSS everywhere.</li>
+      <li><span class="note-number">02</span> The nav bar at the top appears identically on every page -- copy it exactly when adding new pages.</li>
+      <li><span class="note-number">03</span> The grid background is pure CSS -- no image was used.</li>
+      <li><span class="note-number">04</span> Nothing here needs a server or database -- it's a static site, the simplest kind to host.</li>
     </ul>
   </section>
 
   <footer>
-    &copy; 2026 Shayan's Practice Web Build — Sheet 001, Rev 2
+    &copy; 2026 Shayan's Practice Web Build — Sheet 001, Rev 3
   </footer>
 
 </body>
